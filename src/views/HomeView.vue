@@ -18,9 +18,9 @@
       <h1>Links</h1>
       <p>Here are some links to learn more about me!</p>
       <div class="linkGrid">
-        <img class="linkImg" style="padding-top: 10px;" src="@/assets/LI-In-Bug.png">
-        <img class="linkImg" src="@/assets/github-mark.png">
-        <img class="linkImg" src="@/assets/Handshake_app_icon_default.png">
+        <a href="https://www.linkedin.com/in/chase-roach-022b1a257/"><img class="linkImg" style="padding-top: 10px;" src="@/assets/LI-In-Bug.png"></a>
+        <a href="https://github.com/roachcd"><img class="linkImg" src="@/assets/github-mark.png"></a>
+        <a href="https://app.joinhandshake.com/profiles/feanwp"><img class="linkImg" src="@/assets/Handshake_app_icon_default.png"></a>
       </div>
     </div>
     <div class="footer"></div>
