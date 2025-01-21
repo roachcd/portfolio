@@ -18,7 +18,7 @@
       <h1>Links</h1>
       <p>Here are some links to learn more about me!</p>
       <div class="linkGrid">
-        <a href="https://www.linkedin.com/in/chase-roach-022b1a257/"><img class="linkImg" style="padding-top: 10px;" src="@/assets/LI-In-Bug.png"></a>
+        <a href="https://www.linkedin.com/in/chase-roach-022b1a257/"><img class="linkImg linkedin" src="@/assets/LI-In-Bug.png"></a>
         <a href="https://github.com/roachcd"><img class="linkImg" src="@/assets/github-mark.png"></a>
         <a href="https://app.joinhandshake.com/profiles/feanwp"><img class="linkImg" src="@/assets/Handshake_app_icon_default.png"></a>
       </div>
@@ -92,7 +92,7 @@ export default {
   text-align: left;
   background-color: rgb(57, 57, 57);
   padding-top: 5vh;
-  padding-bottom: 20px;
+  padding-bottom: 5vh;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -187,6 +187,10 @@ export default {
   margin-top: 50px;
 }
 
+.linkedin{
+  padding-top: 10px;
+}
+
 @media all and (min-width: 1200px){
   .linkGrid{
     grid-template-columns: 7% 7% 7%;
@@ -208,6 +212,9 @@ export default {
   .aboutMe{
     margin-left: 10%;
     margin-right: 10%;
+  }
+  .linkedin{
+    padding-top: 5px;
   }
 }
 

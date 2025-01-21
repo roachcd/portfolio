@@ -1,5 +1,5 @@
 <template>
-    <a id="project" @mouseenter="mouseOver" @mouseleave="mouseLeave" class="projectDiv noHover" :href="project.link">
+    <a v-if="!project.routerlink" id="project" @mouseenter="mouseOver" @mouseleave="mouseLeave" class="projectDiv noHover" :href="project.link">
         <img :src="'projectImages/' + project.image" class="projectImage"/>
         <h1 class="projectTitle">{{ project.name }}</h1>
         <br>
@@ -7,6 +7,14 @@
             <p>{{ project.description }}</p>
         </div>
     </a>
+    <router-link v-if="project.routerlink" id="project" @mouseenter="mouseOver" @mouseleave="mouseLeave" class="projectDiv noHover" :to="project.link">
+        <img :src="'projectImages/' + project.image" class="projectImage"/>
+        <h1 class="projectTitle">{{ project.name }}</h1>
+        <br>
+        <div class="description">
+            <p>{{ project.description }}</p>
+        </div>
+    </router-link>
 </template>
 
 <script>
