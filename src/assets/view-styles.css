@@ -1,0 +1,39 @@
+.page-view h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.page-view h2 {
+  margin: 0;
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.page-view .accent {
+  background: linear-gradient(90deg, #2d86d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.page-view a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+
+  background: linear-gradient(90deg, #2d86d4, #3b82f6);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.page-view a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 134, 212, 0.3);
+}

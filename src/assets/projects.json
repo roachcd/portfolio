@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "f1",
+    "title": "F1 Fantasy",
+    "description": "An iOS app where users compete as fantasy F1 team principals, building rosters and scoring points based on real race results.",
+    "tech": ["Swift", "Express", "MySQL"],
+    "images": [
+    "/projectImages/f1/Simulator Screenshot - iPhone 17 Pro - 2026-03-26 at 20.28.55.png",
+    "/projectImages/f1/Simulator Screenshot - iPhone 17 Pro - 2026-03-26 at 20.29.15.png",
+    "/projectImages/f1/Simulator Screenshot - iPhone 17 Pro - 2026-03-26 at 20.30.23.png",
+    "/projectImages/f1/Simulator Screenshot - iPhone 17 Pro - 2026-03-26 at 20.30.52.png"
+    ],
+    "github": "https://github.com/roachcd/F1Fantasy",
+    "isComingSoon": false
+  },
+  {
+    "title": "Lakes Area Flight Instruction",
+    "description": "A responsive Vue-based website for a flight school, designed with custom animated sections, aircraft pages, and a polished landing experience focused on clear navigation and visual storytelling.",
+    "tech": ["Vue", "JavaScript", "CSS"],
+    "github": "",
+    "demo": "",
+    "isComingSoon": true
+  },
+  {
+    "slug": "traffic-sim",
+    "title": "Traffic Simulator",
+    "description": "A Python library for simulating traffic systems including vehicles, intersections, and congestion patterns.",
+    "tech": ["Python"],
+    "images": [
+      "/projectImages/traffic/ss.png"
+    ],
+    "github": "https://github.com/roachcd/Traffic-Simulator",
+    "isComingSoon": false
+  },
+  {
+    "title": "Portfolio",
+    "description": "Look under the hood of this website.",
+    "tech": ["Vue", "CSS", "JavaScript"],
+    "github": "gfh",
+    "demo": "",
+    "isComingSoon": false
+  }
+]
