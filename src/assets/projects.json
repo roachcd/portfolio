@@ -36,7 +36,7 @@
     "title": "Portfolio",
     "description": "Look under the hood of this website.",
     "tech": ["Vue", "CSS", "JavaScript"],
-    "github": "gfh",
+    "github": "https://github.com/roachcd/portfolio",
     "demo": "",
     "isComingSoon": false
   }

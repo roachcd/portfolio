@@ -103,6 +103,16 @@ export default {
   gap: 1.5rem;
 }
 
+@media (max-width: 700px) {
+  .projects-grid{
+    display: flex;
+    flex-direction: column;
+  }
+  .project-links a {
+    margin-left: 0px !important;
+  }
+}
+
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border-subtle);

@@ -16,8 +16,36 @@
     </a>
   </nav>
 
+  <mobile-nav>
+    <h1 v-on:click="mobileNavOpened = true">☰</h1>
+    <div class="brand-wrap">
+      <h4 class="brand">Chase Roach</h4>
+    </div>
+  </mobile-nav>
+
+  <mobile-nav-menu v-if="mobileNavOpened">
+      <h1 v-on:click="mobileNavOpened = false" style="font-size: 25px;">✕</h1>
+      <h4>Sections</h4>
+      <router-link to="/" v-on:click="mobileNavOpened = false">Introduction</router-link>
+      <router-link to="/skills" v-on:click="mobileNavOpened = false">Skills</router-link>
+      <router-link to="/projects" v-on:click="mobileNavOpened = false">Projects</router-link>
+      <router-link to="/experience" v-on:click="mobileNavOpened = false">Experience</router-link>
+      <router-link to="/education" v-on:click="mobileNavOpened = false">Education</router-link>
+
+      <span style="margin: 20px;"></span>
+      <h4>Links</h4>
+      <a href="https://www.linkedin.com/in/chase-roach-022b1a257/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+        <img src="/InBug-White.png" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/roachcd" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <img src="/GitHub_Invertocat_White_Clearspace.png" alt="GitHub" />
+      </a>
+  </mobile-nav-menu>
+
   <layout>
-    <spacer class="hidden"></spacer>
+    <spacer class="hidden"></spacer> <!--Spaces flex when side nav becomes fixed-->
     <nav-side>
       <h4>Sections</h4>
       <router-link to="/">Introduction</router-link>
@@ -26,7 +54,7 @@
       <router-link to="/experience">Experience</router-link>
       <router-link to="/education">Education</router-link>
 
-      <router-link to="/education" class="contact">Contact</router-link>
+      <!--<router-link to="/education" class="contact">Contact</router-link>-->
     </nav-side>
 
     <router-view v-slot="{ Component }">
@@ -38,6 +66,20 @@
 </template>
 
 <script>
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
+import '@/assets/view-styles.css'
+
+export default {
+  
+  name: 'App',
+  data() {
+    return{
+      mobileNavOpened: false
+    }
+  } 
+}
+
 window.addEventListener('scroll', () => {
   const sidebar = document.querySelector('nav-side')
   const spacer = document.querySelector('spacer')
@@ -114,6 +156,7 @@ h4 {
   font-weight: 600;
 }
 
+mobile-nav,
 .top-nav,
 nav-side {
   background-color: var(--surface);
@@ -149,12 +192,29 @@ nav-side {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+mobile-nav-menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 .top-nav a:hover {
   color: var(--text-primary);
   background-color: var(--surface-hover);
 }
 
 .top-nav a img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+mobile-nav-menu a img {
   width: 18px;
   height: 18px;
   object-fit: contain;
@@ -208,6 +268,14 @@ nav-side .contact{
   transition: all 0.2s ease;
 }
 
+mobile-nav{
+  display: none;
+}
+
+mobile-nav-menu{
+  display: none;
+}
+
 .fixed-sidebar {
   position: fixed;
   top: var(--layout-padding);
@@ -222,9 +290,55 @@ nav-side .contact{
 }
 
 @media (max-width: 700px) {
+  .page-view {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
   .top-nav {
     flex-wrap: wrap;
     margin: var(--space-4) var(--space-4) 0;
+  }
+  
+  .top-nav{
+    display: none;
+  }
+
+  nav-side{
+    display: none;
+  }
+
+  mobile-nav{
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    margin: var(--layout-padding) var(--layout-padding) 0;
+  }
+
+  mobile-nav-menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-4) var(--space-5);
+    margin: var(--layout-padding) var(--layout-padding) 0;
+    z-index: 100;
+  }
+
+  mobile-nav-menu a{
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   .brand {
@@ -234,7 +348,7 @@ nav-side .contact{
 
   layout {
     grid-template-columns: 1fr;
-    margin: var(--space-4);
+    margin: var(--space-5);
     min-height: auto;
   }
 }

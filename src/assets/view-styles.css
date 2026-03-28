@@ -37,3 +37,19 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(45, 134, 212, 0.3);
 }
+
+@media (max-width: 700px) {
+  .page-view h1 {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
+  .page-view h2 {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .page-view a {
+    width: 100%;
+    text-align: center;
+  }
+}
